@@ -17,7 +17,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Customer'
       security: &ref_0
-        - XApiKeyAuth: []
+        - AuthorizationAuth: []
       requestBody:
         required: true
         content:
@@ -73,7 +73,7 @@ components:
           type: string
           description: >
             The id provided when creating the customer, we suggest matching with
-            your internal customer id in your backend. 
+            your internal customer id in your backend.
         email:
           type: string
           description: >
@@ -361,10 +361,10 @@ components:
         - paid
         - unpaid
   securitySchemes:
-    XApiKeyAuth:
+    AuthorizationAuth:
       type: apiKey
       in: header
-      name: X-API-KEY
+      name: Authorization
 servers:
   - url: https://api.uselotus.io
     description: Cloud
